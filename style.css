@@ -1,0 +1,474 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbe7cc;
+    text-align: center;
+}
+
+/* General Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar */
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fbe7cc;
+     /* Optional background color */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Space between links */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #7b2a2a;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 50%; /* Circle effect */
+    transition: all 0.3s ease;
+    
+}
+
+/* Circle effect on hover */
+.nav-links li a:hover {
+    background-color: #7b2a2a;
+    color: white;
+    transform: scale(1.1);
+    cursor: pointer; /* Add pointer cursor */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    
+}
+
+
+/* Responsive Navbar for Tablets and Below */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        gap: 15px; /* Adjust the gap for smaller screens */
+    }
+
+    .nav-links li a {
+        padding: 15px 30px; /* Adjust padding for better click area */
+        font-size: 20px; /* Increase font size on smaller screens */
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px; /* Adjust navbar padding */
+    }
+
+    .nav-links {
+        gap: 10px; /* Reduced gap for smaller screens */
+    }
+
+    .nav-links li a {
+        font-size: 18px; /* Further reduce font size for small screens */
+        padding: 12px 20px; /* Adjust padding */
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:active {
+        transform: scale(1.05); /* Slightly smaller scale for small screens */
+    }
+}
+
+
+/* Main Heading Section */
+.main-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: normal; /* Ensures font is not bold */
+    color: #7b2a2a;
+    margin: 20px;
+}
+
+/* Responsive Main Heading */
+@media screen and (max-width: 768px) {
+    .main-heading {
+        font-size: 1.8rem; /* Smaller size for mobile */
+        padding: 10px;
+        font-weight: normal; /* Ensures consistency across screen sizes */
+    }
+}
+
+
+/* Content Section Styling */
+.content-section {
+    padding: 50px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Section Styling with Animated Scrolling Background */
+#big-day {
+    padding: 50px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Linear Gradient + Image with Animation */
+    background-image: linear-gradient(#28282880, transparent), url('images/2.jpeg');
+    background-size: cover;
+    background-position: center; /* Starting position */
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Image scrolls with section content */
+    
+    color: #800000; /* Text color */
+    text-align: center;
+    height: 500px; /* Height of the section */
+    overflow: hidden; /* Hide any overflowing content */
+    
+    /* Apply the background animation by default */
+    animation: bgRollingAnim 5.5s ease infinite;
+}
+
+/* Keyframes for Animated Background Scrolling */
+@keyframes bgRollingAnim {
+    0%, 100% {
+        background-position: top; /* Start and end at top */
+    }
+    22.5%, 27.5%, 72.5%, 77.5% {
+        background-position: center; /* Move the background to the center */
+    }
+    50% {
+        background-position: bottom; /* Move to the bottom during animation */
+    }
+}
+
+/* Countdown Timer Styling */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.time-box {
+    background: rgba(123, 42, 42, 0.9); /* Slight transparency for better visibility */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 120px;
+    text-align: center;
+}
+
+/* ✅ Responsive Design for Smaller Screens (Tablets and Phones) */
+@media (max-width: 768px) {
+    /* Adjust the height of the section on smaller screens */
+    #big-day {
+        height: 400px;
+    }
+
+    .countdown {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .time-box {
+        width: 80px;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    /* Apply animation only for medium screens (Tablets) */
+    #big-day {
+        animation: bgRollingAnim 5s ease infinite;
+    }
+}
+
+/* ✅ Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+    /* Adjust the height of the section for even smaller screens */
+    #big-day {
+        height: 300px;
+        background-size: auto 100%; /* Adjust background size to fit smaller screens */
+        background-position: center; /* Ensure proper position on smaller screens */
+    }
+
+    .time-box {
+        width: 60px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Apply animation only for smaller screens (Phones) */
+    #big-day {
+        animation: bgRollingAnim 4s ease infinite;
+    }
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fbe7cc;
+}
+
+.text-container {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 600px;
+}
+
+.text-wrapper {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+h1.text-center {
+    text-align: center;
+}
+
+.Directions-button {
+    background-color: #800000;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.Directions-button:hover {
+    background-color: #b30000;
+}
+
+.lunch-container, .invite-container {
+    margin-top: 20px;
+}
+
+.lunch-container h2, .invite-container h3 {
+    color: #800000;
+}
+
+.img-container {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.wedding-color{
+    background-color: #b9dbcb;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .img-container {
+        max-width: 100%;
+    }
+
+    .img-container img {
+        width: 80%;
+    }
+
+    .Directions-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.text-center {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .text-wrapper div {
+        margin-bottom: 15px;
+    }
+
+    .img-container img {
+        width: 90%;
+    }
+}
+
+
+
+
+/* Story Section Container Styling */
+#our-story {
+    padding: 50px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fbe7cc; /*White background for the section */
+}
+
+.img-container {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-container {
+    flex: 1;
+    max-width: 600px;
+    margin-left: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+h2 {
+    font-size: 28px;
+    color: #800000;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #our-story {
+        padding: 40px 20px; /* Adjust padding */
+    }
+
+    .container.story {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-container {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .text-container {
+        max-width: 90%;
+        margin-left: 0;
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Smaller size for mobile */
+    }
+
+    p {
+        font-size: 16px; /* Smaller text for readability on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #our-story {
+        padding: 30px 10px; /* Smaller padding */
+    }
+
+    .text-container {
+        padding: 0 15px; /* Add padding on both sides */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust size for smaller screens */
+    }
+
+    p {
+        font-size: 14px; /* Smaller text on phones */
+    }
+}
+/* When countdown reaches zero, change the background */
+.wedding-theme {
+    background: linear-gradient(to bottom right, #ff99cc, #ff66b2);
+    transition: background 2s ease-in-out;
+}
+
+/* Happy Married Life message styling */
+.wedding-message {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards, bounce 1.5s infinite alternate ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Bouncing effect */
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+
+
+
+
